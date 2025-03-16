@@ -8,7 +8,10 @@ const userSchema = new mongoose.Schema({
     age: { type: Number },
     dob: { type: Date },
     otp: { type: String },
-    image: { type: String }
+    image: { type: String },
+    isVerified: { type: Boolean, default: false },
+    verificationToken: { type: String },
+    createdAt: { type: Date, default: Date.now }
 });
 
 const User = mongoose.model('User', userSchema);
